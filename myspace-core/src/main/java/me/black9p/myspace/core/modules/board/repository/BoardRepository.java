@@ -7,5 +7,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * Board 레파지토리
  * @author black9p
  */
-public interface BoardRepository extends JpaRepository<Board, Long> {
+public interface BoardRepository extends JpaRepository<Board, Long>, BoardRepositoryCustom {
 }
