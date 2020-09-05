@@ -7,6 +7,9 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * @author black9p
+ */
 @DataJpaTest
 class BoardRepositoryTest {
 
