@@ -11,5 +11,12 @@
 
     <artifactId>myspace-web</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>me.black9p</groupId>
+            <artifactId>myspace-core</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 
 </project>
