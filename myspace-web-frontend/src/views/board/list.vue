@@ -8,7 +8,6 @@ export default {
     },
     data() {
         return {
-            menuVisible: false,
             items:[]
         }
     },
@@ -17,6 +16,9 @@ export default {
             boardApi.fetch().then(({data}) => {
                 this.items = data;
             })
+        },
+        read(boardSeq) {
+          this.$router.push({ name: 'BoardDetail', query: { 'boardSeq' : boardSeq } });
         }
     }
 }
@@ -28,7 +30,7 @@ export default {
   </v-app-bar>
 
   <v-main>
-    <v-row class="mb-6">
+    <v-row>
       <v-col md="10" offset-md="1">
         <v-simple-table dark>
           <template v-slot:default>
@@ -43,7 +45,7 @@ export default {
             <tbody>
               <tr v-for="item in items" :key="item.boardSeq">
                 <td class="text-left">{{ item.boardSeq }}</td>
-                <td class="text-left">{{ item.title }}</td>
+                <td class="text-left" @click="read(item.boardSeq)">{{ item.title }}</td>
                 <td class="text-left">{{ item.writer }}</td>
                 <td class="text-left">{{ item.registerYmdt }}</td>
               </tr>

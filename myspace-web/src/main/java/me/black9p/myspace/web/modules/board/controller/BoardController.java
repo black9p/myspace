@@ -2,8 +2,10 @@ package me.black9p.myspace.web.modules.board.controller;
 
 import lombok.RequiredArgsConstructor;
 import me.black9p.myspace.core.modules.board.entity.Board;
+import me.black9p.myspace.core.modules.board.entity.BoardDTO;
 import me.black9p.myspace.core.modules.board.repository.BoardRepository;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -20,5 +22,10 @@ public class BoardController {
     @GetMapping("/api/boards")
     public List<Board> getBoards() {
         return boardRepository.findAll();
+    }
+
+    @GetMapping("/api/boards/{boardSeq}")
+    public BoardDTO getBoard(@PathVariable Long boardSeq) {
+        return boardRepository.findBoardDetail(boardSeq);
     }
 }

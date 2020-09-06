@@ -10,6 +10,11 @@ export default new VueRouter( {
             path: "/board",
             name: "Board",
             component: () => import('@/views/board/list')
+        },
+        {
+            path: "/boardDetail",
+            name: "BoardDetail",
+            component: () => import('@/views/board/detail')
         }
     ]
 })
