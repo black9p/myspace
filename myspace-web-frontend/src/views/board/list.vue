@@ -19,6 +19,9 @@ export default {
         },
         read(boardSeq) {
           this.$router.push({ name: 'BoardDetail', query: { 'boardSeq' : boardSeq } });
+        },
+        write() {
+          this.$router.push({ name: 'BoardForm' });
         }
     }
 }
@@ -54,6 +57,9 @@ export default {
         </v-simple-table>
       </v-col>
     </v-row>
+    <div class="my-2">
+      <v-btn color="primary" @click="write">글쓰기</v-btn>
+    </div>
   </v-main>
   <v-footer dark absolute class="font-weight-medium">
       <v-col class="text-center white--text" cols="12">

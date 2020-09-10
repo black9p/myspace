@@ -15,6 +15,11 @@ export default new VueRouter( {
             path: "/boardDetail",
             name: "BoardDetail",
             component: () => import('@/views/board/detail')
+        },
+        {
+            path: "/boardForm",
+            name: "BoardForm",
+            component: () => import('@/views/board/form')
         }
     ]
 })

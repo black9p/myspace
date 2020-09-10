@@ -1,7 +1,6 @@
 package me.black9p.myspace.core.modules.board.entity;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -15,6 +14,9 @@ import java.time.LocalDateTime;
  */
 @Entity
 @Getter @Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class BoardDetail {
     @Id
     private Long boardDetailSeq;
@@ -23,4 +25,11 @@ public class BoardDetail {
     private LocalDateTime registerYmdt;
     @UpdateTimestamp
     private LocalDateTime modifyYmdt;
+
+    public static BoardDetail create(Long boardSeq, String content) {
+        return BoardDetail.builder()
+                          .boardDetailSeq(boardSeq)
+                          .content(content)
+                          .build();
+    }
 }

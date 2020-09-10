@@ -7,5 +7,8 @@ export const boardApi = {
     },
     fetchDetail(boardSeq) {
         return axios.get(`${boardUrl}/${boardSeq}`);
+    },
+    write(board) {
+        return axios.post(`${boardUrl}`, board);
     }
 }

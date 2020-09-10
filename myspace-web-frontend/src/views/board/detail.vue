@@ -2,7 +2,7 @@
 import { boardApi } from '@/api'
 
 export default {
-    name: 'Board',
+    name: 'BoardDetail',
     created() {
         if (this.$route.query.boardSeq) {
             this.fetch(this.$route.query.boardSeq);
